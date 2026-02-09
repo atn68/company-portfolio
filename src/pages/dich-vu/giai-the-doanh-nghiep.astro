@@ -1,0 +1,47 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const service = {
+	id: 'dissolution',
+	title: 'Giải thể Doanh nghiệp',
+	icon: 'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16',
+	description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+	price: 'Liên hệ',
+	timeframe: '30 đến 45 ngày làm việc',
+	whatYouProvide: [
+		'Giấy chứng nhận đăng ký doanh nghiệp',
+		'Quyết định giải thể doanh nghiệp',
+		'Báo cáo thanh lý tài sản',
+		'Báo cáo quyết toán thuế',
+		'Giấy xác nhận đã thu hồi con dấu',
+	],
+	whatYouReceive: [
+		'Soạn và nộp hồ sơ giải thể',
+		'Làm việc với cơ quan thuế',
+		'Cập nhật nghĩa vụ thuế',
+		'Huỷ đăng ký thuế',
+		'Thông báo giải thể',
+		'Tư vấn miễn phí',
+	],
+	consulting: [
+		'Tư vấn điều kiện giải thể',
+		'Tư vấn thủ tục thanh lý tài sản',
+		'Tư vấn quyết toán thuế',
+		'Tư vấn thủ tục pháp lý',
+		'Tư vấn nghĩa vụ của doanh nghiệp',
+		'Tư vấn miễn phí',
+	],
+};
+---
+
+<PageLayout title={service.title} icon={service.icon} description={service.description} price={service.price} timeframe={service.timeframe} showPricing={true} heroBackground="/hero-service.jpg">
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">ĐIỀU KIỆN GIẢI THỂ</h2></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6">{[{title:'Thanh toán hết nợ',desc:'Đã thanh toán nợ thuế, BHXH, nợ người lao động, nợ đối tác'},{title:'Không tranh chấp',desc:'Không trong quá trình giải quyết tranh chấp tại Tòa án'}].map((item)=><div class="bg-white p-6 rounded-lg shadow"><h3 class="font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div>)}</div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">KHÁCH HÀNG CẦN CUNG CẤP</h2><ul class="space-y-4">{service.whatYouProvide.map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">SẢN PHẨM NHẬN ĐƯỢC</h2><ul class="space-y-4">{service.whatYouReceive.map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-green-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">QUY TRÌNH 5 BƯỚC GIẢI THỂ</h2></div><div class="space-y-6">{[{step:'1',title:'Tiếp nhận',desc:'Tiếp nhận yêu cầu'},{step:'2',title:'Tư vấn',desc:'Tư vấn và giải đáp'},{step:'3',title:'Báo giá',desc:'Báo giá và nội dung'},{step:'4',title:'Thực hiện',desc:'Thực hiện dịch vụ'},{step:'5',title:'Hoàn thành',desc:'Hoàn thành dịch vụ'}].map((item)=><div class="flex gap-6"><div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">{item.step}</div><div class="flex-1 bg-white p-6 rounded-lg shadow"><h3 class="text-xl font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div></div>)}</div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">FAQ</h2></div><div class="space-y-4">{[{q:'Công ty đang thực hiện hợp đồng có được giải thể không?',a:'Không được giải thể nếu chưa hoàn thành nghĩa vụ hợp đồng. Phải hoàn tất hoặc thanh lý trước khi giải thể.'},{q:'Hóa đơn hết hạn bao lâu sau giải thể?',a:'Trong 05 ngày kể từ ngày giải thể mọi hóa đơn vẫn nằm trong thời hạn xác minh hóa đơn.'},{q:'Chi phí giải thể?',a:'Chi phí tùy thuộc vào hồ sơ công ty: thời gian hoạt động, hoàn thiện sổ sách kế toán, mức độ phức tạp quyết toán thuế... Liên hệ để có báo giá chi tiết.'},{q:'Công ty nợ thuế có được giải thể không?',a:'Phải hoàn thành nghĩa vụ thuế trước khi giải thể. Nếu không đáp ứng thì không được phép giải thể.'}].map((faq)=><div class="bg-white rounded-lg shadow overflow-hidden"><details class="group"><summary class="flex justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100"><h3 class="font-semibold pr-4">{faq.q}</h3><svg class="w-6 h-6 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="p-6 border-t prose prose-sm" set:html={faq.a}/></details></div>)}</div></div></div></section>
+</PageLayout>

@@ -1,0 +1,119 @@
+---
+import Layout from './Layout.astro';
+import { companyInfo } from '../config';
+
+interface Props {
+	title: string;
+	icon: string;
+	description?: string;
+	price?: string;
+	totalPrice?: string;
+	timeframe?: string;
+	showPricing?: boolean;
+	heroBackground?: string;
+}
+
+const {
+	title,
+	icon,
+	description = '',
+	price,
+	totalPrice,
+	timeframe,
+	showPricing = true,
+	heroBackground = '',
+} = Astro.props;
+---
+
+<Layout title={`${title} - TV Legal Count`}>
+	<!-- Breadcrumb -->
+	<nav class="bg-gray-50 border-b border-gray-200">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+			<ol class="flex items-center space-x-2 text-sm">
+				<li>
+					<a href="/" class="text-gray-500 hover:text-gray-700">Trang chủ</a>
+				</li>
+				<li>
+					<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</li>
+				<li>
+					<a href="/dich-vu" class="text-gray-500 hover:text-gray-700">Dịch vụ</a>
+				</li>
+				<li>
+					<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</li>
+				<li class="text-gray-900 font-medium">{title}</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section
+		class="relative py-20 bg-cover bg-top bg-no-repeat"
+		style={heroBackground ? `background-image: url('${heroBackground}')` : ''}
+	>
+		<!-- Dark Overlay -->
+		<div class="absolute inset-0 bg-gradient-to-r from-blue-900/85 via-blue-800/80 to-slate-900/85"></div>
+
+		<div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="flex items-start gap-6">
+					<div class="flex-shrink-0 w-20 h-20 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40 shadow-xl">
+						<svg class="w-10 h-10 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+						</svg>
+					</div>
+					<div class="flex-1">
+						<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-white drop-shadow-lg">{title}</h1>
+						{description && <p class="text-xl text-blue-100 drop-shadow-md">{description}</p>}
+
+						<!-- Pricing Info (Optional) -->
+						{showPricing && price && totalPrice && timeframe && (
+							<div class="mt-8 flex flex-wrap gap-6">
+								<div class="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 border border-white/30">
+									<div class="text-blue-100 text-sm mb-1">Phí dịch vụ</div>
+									<div class="text-2xl font-bold text-white">{price}</div>
+								</div>
+								<div class="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 border border-white/30">
+									<div class="text-blue-100 text-sm mb-1">Tổng chi phí ước tính</div>
+									<div class="text-2xl font-bold text-white">{totalPrice}</div>
+								</div>
+								<div class="bg-white/20 backdrop-blur-md rounded-lg px-6 py-4 border border-white/30">
+									<div class="text-blue-100 text-sm mb-1">Thời gian thực hiện</div>
+									<div class="text-2xl font-bold text-white">{timeframe}</div>
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Page Content -->
+	<slot />
+
+	<!-- CTA Section -->
+	<section class="bg-blue-600 text-white py-16">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold mb-4">Bạn cần tư vấn thêm?</h2>
+				<p class="text-xl text-blue-100 mb-8">
+					Liên hệ ngay với chúng tôi để được tư vấn miễn phí và báo giá chi tiết
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/lien-he" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block">
+						Gửi yêu cầu tư vấn
+					</a>
+					<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200 inline-block">
+						Hotline: {companyInfo.hotline}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

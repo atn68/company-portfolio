@@ -1,0 +1,401 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { companyInfo } from '../../config';
+
+const services = [
+	{
+		id: 'startup-vietnam',
+		title: 'Thành lập doanh nghiệp vốn Việt Nam',
+		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+		color: 'blue',
+		colorClass: 'from-blue-600 to-blue-800',
+		bgColorClass: 'bg-blue-100',
+		textColorClass: 'text-blue-600',
+		description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+		detailPage: '/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam',
+		whatYouProvide: [
+			'Bản sao y CCCD/CMND/Hộ chiếu của chủ sở hữu/thành viên góp vốn/cổ đông/Người đại diện pháp luật',
+			'Các thông tin cần cung cấp về doanh nghiệp mới: Tên công ty, địa chỉ công ty, ngành nghề kinh doanh… (Luật sư sẽ tư vấn chi tiết)',
+			'Các giấy tờ, thông tin khác nếu kinh doanh ngành nghề kinh doanh có điều kiện',
+		],
+		whatYouReceive: [
+			'Giấy phép doanh nghiệp',
+			'Khắc con dấu doanh nghiệp',
+			'Mua chữ ký số',
+			'Đăng ký kê khai thuế: Thuế môn bài, hình thức kê khai thuế',
+			'Mở tài khoản ngân hàng và đăng ký nộp thuế điện tử',
+			'Đăng ký sử dụng hóa đơn điện tử',
+			'Khắc và treo bảng hiệu theo đúng quy định',
+			'Hỗ trợ Tiếp đoàn thẩm định sau đăng ký kinh doanh hoặc cơ quan quản lý thuế',
+			'Hỗ trợ trọn gói, tư vấn miễn phí tất cả các vấn đề phát sinh',
+		],
+		price: '2.900.000 đồng',
+		totalPrice: '3.900.000 – 7.900.000 đồng',
+		timeframe: '3 đến 5 ngày làm việc',
+		consulting: [
+			'Tư vấn lựa chọn loại hình doanh nghiệp phù hợp',
+			'Tư vấn đặt tên công ty theo mong muốn và đúng luật',
+			'Tư vấn về lựa chọn địa chỉ công ty (tư vấn cả hợp đồng thuê văn phòng)',
+			'Tư vấn đăng ký ngành nghề kinh doanh theo đúng nhu cầu thực tế',
+			'Tư vấn xây dựng vốn điều lệ phù hợp cho doanh nghiệp',
+			'Tư vấn xây dựng cơ cấu tổ chức cho doanh nghiệp',
+			'Tư vấn miễn phí tất cả các vấn đề phát sinh',
+		],
+	},
+	{
+		id: 'legal',
+		title: 'Tư vấn pháp lý doanh nghiệp',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		color: 'purple',
+		colorClass: 'from-purple-600 to-purple-800',
+		bgColorClass: 'bg-purple-100',
+		textColorClass: 'text-purple-600',
+		description: 'Đội ngũ luật sư giàu kinh nghiệm sẽ tư vấn và hỗ trợ bạn trong mọi vấn đề pháp lý của doanh nghiệp.',
+		detailPage: '',
+		features: [
+			'Tư vấn doanh nghiệp',
+			'Soạn thảo hợp đồng',
+			'Giải quyết tranh chấp',
+			'Tư vấn đầu tư',
+			'Tư vấn sở hữu trí tuệ',
+			'Tư vấn lao động',
+			'Giám sát tuân thủ pháp luật',
+		],
+		benefits: [
+			'Luật sư chuyên môn cao, giàu kinh nghiệm',
+			'Tư vấn tận tình, chi tiết',
+			'Soạn thảo văn bản pháp lý chuẩn xác',
+			'Giảm thiểu rủi ro pháp lý',
+			'Tiết kiệm thời gian và chi phí',
+		],
+	},
+	{
+		id: 'accounting',
+		title: 'Kế toán & Thuế trọn gói',
+		icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z',
+		color: 'green',
+		colorClass: 'from-green-600 to-green-800',
+		bgColorClass: 'bg-green-100',
+		textColorClass: 'text-green-600',
+		description: 'Dịch vụ kế toán thuế chuyên nghiệp, đảm bảo tuân thủ pháp luật và tối ưu hóa chi phí cho doanh nghiệp.',
+		detailPage: '',
+		features: [
+			'Báo cáo thuế hàng tháng/quý/năm',
+			'Báo cáo tài chính năm',
+			'Báo cáo quyết toán năm',
+			'Kê khai và nộp thuế',
+			'Thực hiện sổ sách kế toán',
+			'Tư vấn tối ưu hóa chi phí',
+			'Làm việc với cơ quan thuế',
+		],
+		price: 'Từ 1.500.000 đồng/tháng',
+		benefits: [
+			'Đội ngũ kế toán trưởng chuyên nghiệp',
+			'Đảm bảo tuân thủ pháp luật',
+			'Tối ưu hóa chi phí thuế',
+			'Giảm thiểu rủi ro khi thanh kiểm tra',
+			'Tư vấn miễn phí trọn đời',
+		],
+	},
+];
+---
+
+<Layout title="Dịch vụ - TV Legal Count">
+	<!-- Hero Section -->
+	<section class="relative py-20 bg-cover bg-top bg-no-repeat" style="background-image: url('/hero-service.jpg')">
+		<!-- Dark Overlay -->
+		<div class="absolute inset-0 bg-gradient-to-r from-blue-900/85 via-blue-800/80 to-slate-900/85"></div>
+
+		<div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="flex items-center justify-center gap-6 mb-8">
+					<div class="flex-shrink-0 w-20 h-20 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40 shadow-xl">
+						<svg class="w-10 h-10 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+						</svg>
+					</div>
+				</div>
+				<h1 class="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-lg">Dịch vụ của chúng tôi</h1>
+				<p class="text-xl text-blue-100 drop-shadow-md">
+					Chúng tôi cung cấp các giải pháp toàn diện giúp doanh nghiệp của bạn phát triển bền vững
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold text-gray-900 mb-4">
+					Tại sao hơn 2.000 doanh nghiệp đã chọn chúng tôi?
+				</h2>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">KINH NGHIỆM</h3>
+					<p class="text-gray-600">Hơn 2.000 khách hàng trong và ngoài nước tin tưởng và đồng hành</p>
+				</div>
+
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">TRỌN GÓI</h3>
+					<p class="text-gray-600">Cung cấp những gì Doanh nghiệp cần phải thực hiện theo pháp luật hiện hành</p>
+				</div>
+
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">NHÂN SỰ</h3>
+					<p class="text-gray-600">100% nhân sự làm đúng chuyên môn, được đào tạo bài bản và thường xuyên</p>
+				</div>
+
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">GIÁ DỊCH VỤ</h3>
+					<p class="text-gray-600">Hợp lý và luôn có chính sách ưu đãi cho Start-up và khách hàng thân thiết</p>
+				</div>
+
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">QUY TRÌNH DỊCH VỤ</h3>
+					<p class="text-gray-600">Quy trình luôn được cải tiến để hướng đến sự thuận tiện cho khách hàng</p>
+				</div>
+
+				<div class="text-center p-6">
+					<div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-2">HỖ TRỢ TRỌN ĐỜI</h3>
+					<p class="text-gray-600">Cung cấp đầy đủ dịch vụ và hỗ trợ giải đáp miễn phí cho Doanh nghiệp trọn đời</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services List -->
+	<section class="py-20">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			{services.map((service, index) => (
+				<div id={service.id} class="mb-20 last:mb-0">
+					<div class="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden">
+						<!-- Service Header -->
+						<div class={`bg-gradient-to-r ${service.colorClass} text-white p-8`}>
+							<div class="flex items-start gap-6">
+								<div class="flex-shrink-0 w-20 h-20 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40 shadow-xl">
+									<svg class="w-10 h-10 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+										<path stroke-linecap="round" stroke-linejoin="round" d={service.icon}/>
+									</svg>
+								</div>
+								<div class="flex-1">
+									<h2 class="text-3xl font-bold mb-2 drop-shadow-lg">{service.title}</h2>
+									<p class="text-white/90 text-lg drop-shadow-md">{service.description}</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Service Content -->
+						<div class="p-8">
+							{service.whatYouProvide && (
+								<>
+									<h3 class="text-xl font-bold text-gray-900 mb-4">KHÁCH HÀNG CẦN CUNG CẤP GÌ?</h3>
+									<ul class="space-y-3 mb-8">
+										{service.whatYouProvide.map((item) => (
+											<li class="flex items-start">
+												<svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+												</svg>
+												<span class="text-gray-700">{item}</span>
+											</li>
+										))}
+									</ul>
+								</>
+							)}
+
+							{service.whatYouReceive && (
+								<>
+									<h3 class="text-xl font-bold text-gray-900 mb-4">SẢN PHẨM KHÁCH HÀNG SẼ NHẬN ĐƯỢC</h3>
+									<ul class="space-y-3 mb-8">
+										{service.whatYouReceive.map((item) => (
+											<li class="flex items-start">
+												<svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+												</svg>
+												<span class="text-gray-700">{item}</span>
+											</li>
+										))}
+									</ul>
+								</>
+							)}
+
+							{service.consulting && (
+								<>
+									<h3 class="text-xl font-bold text-gray-900 mb-4">LUẬT SƯ SẼ TƯ VẤN NHỮNG GÌ?</h3>
+									<ul class="space-y-3 mb-8">
+										{service.consulting.map((item) => (
+											<li class="flex items-start">
+												<svg class="w-5 h-5 text-purple-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+												</svg>
+												<span class="text-gray-700">{item}</span>
+											</li>
+										))}
+									</ul>
+								</>
+							)}
+
+							{service.features && (
+								<>
+									<h3 class="text-xl font-bold text-gray-900 mb-4">TÍNH NĂNG DỊCH VỤ</h3>
+									<ul class="space-y-3 mb-8">
+										{service.features.map((item) => (
+											<li class="flex items-start">
+												<svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+												</svg>
+												<span class="text-gray-700">{item}</span>
+											</li>
+										))}
+									</ul>
+								</>
+							)}
+
+							{service.benefits && (
+								<>
+									<h3 class="text-xl font-bold text-gray-900 mb-4">LỢI ÍCH CHO KHÁCH HÀNG</h3>
+									<ul class="space-y-3 mb-8">
+										{service.benefits.map((item) => (
+											<li class="flex items-start">
+												<svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+												</svg>
+												<span class="text-gray-700">{item}</span>
+											</li>
+										))}
+									</ul>
+								</>
+							)}
+
+							<!-- Pricing & Time -->
+							{service.price || service.totalPrice || service.timeframe ? (
+								<div class="bg-gray-50 rounded-lg p-6 mb-6">
+									<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+										{service.price && (
+											<div class="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+												<h4 class="font-semibold text-gray-900 mb-2">Phí dịch vụ</h4>
+												<p class="text-2xl font-bold text-blue-600">{service.price}</p>
+											</div>
+										)}
+										{service.totalPrice && (
+											<div class="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+												<h4 class="font-semibold text-gray-900 mb-2">Tổng phí</h4>
+												<p class="text-xl font-bold text-gray-900">{service.totalPrice}</p>
+												<p class="text-sm text-gray-600 mt-1">(Liên hệ chuyên viên để được tư vấn chi tiết hơn)</p>
+											</div>
+										)}
+										{service.timeframe && (
+											<div class="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+												<h4 class="font-semibold text-gray-900 mb-2">Thời gian thực hiện</h4>
+												<p class="text-xl font-bold text-gray-900">{service.timeframe}</p>
+											</div>
+										)}
+									</div>
+								</div>
+							) : null}
+
+							<!-- CTA -->
+							<div class="flex flex-col sm:flex-row gap-4">
+								{service.detailPage && (
+									<a href={service.detailPage} class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 text-center">
+										Xem chi tiết dịch vụ
+									</a>
+								)}
+								<a href="/lien-he" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-center">
+									Liên hệ tư vấn ngay
+								</a>
+								<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 text-center">
+									Gọi: {companyInfo.hotline}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<!-- Process Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">Quy trình 5 bước thành lập doanh nghiệp</h2>
+					<p class="text-xl text-gray-600">Chúng tôi cam kết quy trình nhanh chóng, chuyên nghiệp</p>
+				</div>
+
+				<div class="space-y-6">
+					{[
+						{ step: '1', title: 'Tiếp nhận yêu cầu', desc: 'Bạn gửi yêu cầu tư vấn qua hotline, email hoặc form liên hệ' },
+						{ step: '2', title: 'Tư vấn và giải đáp', desc: 'Luật sư/chuyên viên tư vấn chi tiết về loại hình doanh nghiệp, ngành nghề, vốn điều lệ' },
+						{ step: '3', title: 'Báo giá và chuẩn bị', desc: 'Gửi báo giá chi tiết và hướng dẫn chuẩn bị hồ sơ cần thiết' },
+						{ step: '4', title: 'Thực hiện dịch vụ', desc: 'Thủ tục thành lập doanh nghiệp, khắc dấu, mua chữ ký số, mở tài khoản ngân hàng' },
+						{ step: '5', title: 'Hoàn thành và bàn giao', desc: 'Bàn giao giấy phép, con dấu và các tài liệu cho doanh nghiệp' },
+					].map((item) => (
+						<div class="flex gap-6 items-start">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+								{item.step}
+							</div>
+							<div class="flex-1 bg-white p-6 rounded-lg shadow-md">
+								<h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+								<p class="text-gray-600">{item.desc}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-blue-600 text-white py-16">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold mb-4">Bạn cần tư vấn thêm?</h2>
+				<p class="text-xl text-blue-100 mb-8">
+					Liên hệ ngay với chúng tôi để được tư vấn miễn phí và báo giá chi tiết
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/lien-he" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block">
+						Gửi yêu cầu tư vấn
+					</a>
+					<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200 inline-block">
+						Hotline: {companyInfo.hotline}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

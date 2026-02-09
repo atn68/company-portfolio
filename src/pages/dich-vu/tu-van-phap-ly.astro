@@ -1,0 +1,179 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const page = {
+	title: 'Dịch vụ Tư vấn pháp lý',
+	description: 'Tư vấn pháp lý thường xuyên, rà soát hợp đồng, xây dựng quy chế doanh nghiệp',
+	icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+};
+
+const services = [
+	{
+		title: 'Tư vấn pháp lý thường xuyên',
+		description: 'Phòng pháp chế thuê ngoài cho doanh nghiệp SME',
+		icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+		price: 'Từ 3.000.000 đồng/tháng',
+		href: '#',
+		color: 'blue',
+		colorClass: 'from-blue-600 to-blue-800',
+		bgColorClass: 'bg-blue-100',
+		textColorClass: 'text-blue-600',
+		features: [
+			'Tư vấn pháp lý hàng ngày',
+			'Rà soát và soạn thảo hợp đồng',
+			'Tư vấn thương mại',
+			'Tư vấn lao động',
+			'Hỗ trợ giải quyết tranh chấp',
+			'Giảm chi phí so với tuyển dụng',
+		],
+	},
+	{
+		title: 'Rà soát và soạn thảo hợp đồng',
+		description: 'Xem xét và xây dựng các loại hợp đồng trong kinh doanh',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		price: 'Từ 500.000 đồng/hợp đồng',
+		href: '#',
+		color: 'purple',
+		colorClass: 'from-purple-600 to-purple-800',
+		bgColorClass: 'bg-purple-100',
+		textColorClass: 'text-purple-600',
+		features: [
+			'Hợp đồng thương mại',
+			'Hợp đồng lao động',
+			'Hợp đồng hợp tác',
+			'Hợp đồng mua bán',
+			'Hợp đồng dịch vụ',
+			'Hợp đồng kinh tế khác',
+		],
+	},
+	{
+		title: 'Xây dựng và rà soát quy chế doanh nghiệp',
+		description: 'Hệ thống hóa quy định và quy trình nội bộ doanh nghiệp',
+		icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'green',
+		colorClass: 'from-green-600 to-green-800',
+		bgColorClass: 'bg-green-100',
+		textColorClass: 'text-green-600',
+		features: [
+			'Điều lệ công ty',
+			'Quy chế tổ chức quản lý',
+			'Quy chế nội bộ',
+			'Quy trình làm việc',
+			'Quy định tài chính',
+			'Quy định nhân sự',
+		],
+	},
+	{
+		title: 'Tư vấn lao động - BHXH',
+		description: 'Tư vấn quan hệ lao động, bảo hiểm xã hội',
+		icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'indigo',
+		colorClass: 'from-indigo-600 to-indigo-800',
+		bgColorClass: 'bg-indigo-100',
+		textColorClass: 'text-indigo-600',
+		features: [
+			'Hợp đồng lao động',
+			'Quy chế lao động',
+			'Đăng ký BHXH, BHYT, BHTN',
+			'Khai báo và đóng BHXH',
+			'Tư vấn chế độ lao động',
+			'Giải quyết tranh chấp lao động',
+		],
+	},
+];
+---
+
+<PageLayout
+	title={page.title}
+	icon={page.icon}
+	description={page.description}
+	showPricing={false}
+	heroBackground="/hero-service.jpg"
+>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+		<div class="max-w-6xl mx-auto">
+			<!-- Introduction -->
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-bold text-gray-900 mb-4">
+					Dịch vụ tư vấn pháp lý chuyên nghiệp
+				</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Phòng pháp chế thuê ngoài cho doanh nghiệp là giải pháp tối ưu giúp các doanh nghiệp SME có được đội ngũ trợ giúp chuyên nghiệp và tiết kiệm chi phí: Tư vấn pháp lý thường xuyên, rà soát, xây dựng hợp đồng, xây dựng và rà soát quy chế, lao động - BHXH...
+				</p>
+			</div>
+
+			<!-- Why Choose Section -->
+			<div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-8 mb-12 text-white">
+				<h3 class="text-2xl font-bold mb-6 text-center">Tại sao chọn dịch vụ tư vấn pháp lý thường xuyên?</h3>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div class="text-center">
+						<div class="text-4xl font-bold mb-2">70%</div>
+						<div class="text-blue-100">Tiết kiệm chi phí</div>
+						<p class="text-sm text-blue-200 mt-2">So với tuyển dụng nhân sự pháp chế toàn thời gian</p>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl font-bold mb-2">24/7</div>
+						<div class="text-blue-100">Hỗ trợ tư vấn</div>
+						<p class="text-sm text-blue-200 mt-2">Liên hệ bất cứ khi nào cần tư vấn pháp lý</p>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl font-bold mb-2">100%</div>
+						<div class="text-blue-100">Đội ngũ chuyên môn</div>
+						<p class="text-sm text-blue-200 mt-2">Luật sư chuyên nghiệp giàu kinh nghiệm</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{services.map((service) => (
+					<div class="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+						<div class={`bg-gradient-to-r ${service.colorClass} text-white p-6`}>
+							<div class="flex items-start gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40">
+									<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d={service.icon}/>
+									</svg>
+								</div>
+								<div class="flex-1">
+									<h3 class="text-xl font-bold mb-2">{service.title}</h3>
+									<p class="text-white/90 text-sm">{service.description}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="p-6">
+							<ul class="space-y-3 mb-6">
+								{service.features.map((feature) => (
+									<li class="flex items-start">
+										<svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+										</svg>
+										<span class="text-gray-600">{feature}</span>
+									</li>
+								))}
+							</ul>
+
+							<div class="flex items-center justify-between mt-6 pt-6 border-t border-gray-200">
+								<div>
+									<div class="text-sm text-gray-500">Chi phí từ</div>
+									<div class="text-lg font-bold text-gray-900">{service.price}</div>
+								</div>
+								<a
+									href={service.href}
+									class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+								>
+									Xem chi tiết
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</PageLayout>

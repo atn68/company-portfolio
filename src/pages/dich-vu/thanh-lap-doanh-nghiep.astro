@@ -1,0 +1,159 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const page = {
+	title: 'Dịch vụ Doanh nghiệp',
+	description: 'Thành lập doanh nghiệp, thay đổi đăng ký kinh doanh và tư vấn pháp lý cho doanh nghiệp',
+	icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+};
+
+const services = [
+	{
+		title: 'Thành lập doanh nghiệp vốn Việt Nam',
+		description: 'Thủ tục thành lập công ty TNHH, công ty cổ phần với chi phí hợp lý và quy trình nhanh chóng',
+		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+		price: '2.900.000 đồng',
+		href: '/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam',
+		color: 'blue',
+		colorClass: 'from-blue-600 to-blue-800',
+		bgColorClass: 'bg-blue-100',
+		textColorClass: 'text-blue-600',
+		features: [
+			'Giấy phép doanh nghiệp',
+			'Khắc con dấu doanh nghiệp',
+			'Mua chữ ký số',
+			'Đăng ký kê khai thuế',
+			'Mở tài khoản ngân hàng',
+			'Đăng ký hóa đơn điện tử',
+		],
+	},
+	{
+		title: 'Thành lập doanh nghiệp vốn đầu tư nước ngoài',
+		description: 'Tư vấn thủ tục thành lập công ty 100% vốn nước ngoài theo Luật Đầu tư 2020',
+		icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+		price: 'Liên hệ',
+		href: '/dich-vu/thanh-lap-doanh-nghiep-von-nuoc-ngoai',
+		color: 'purple',
+		colorClass: 'from-purple-600 to-purple-800',
+		bgColorClass: 'bg-purple-100',
+		textColorClass: 'text-purple-600',
+		features: [
+			'Giấy chứng nhận đăng ký đầu tư',
+			'Giấy chứng nhận đăng ký doanh nghiệp',
+			'Tư vấn điều kiện tiếp cận thị trường',
+			'Hồ sơ pháp lý nhà đầu tư nước ngoài',
+			'Chấp thuận chủ trương đầu tư (nếu có)',
+		],
+	},
+	{
+		title: 'Thay đổi đăng ký kinh doanh',
+		description: 'Thủ tục thay đổi nội dung đăng ký doanh nghiệp, tăng giảm vốn, chuyển nhượng vốn',
+		icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+		price: 'Từ 1.000.000 đồng',
+		href: '/dich-vu/thay-doi-dang-ky-kinh-doanh',
+		color: 'green',
+		colorClass: 'from-green-600 to-green-800',
+		bgColorClass: 'bg-green-100',
+		textColorClass: 'text-green-600',
+		features: [
+			'Thay đổi tên công ty',
+			'Thay đổi địa chỉ trụ sở',
+			'Tăng/giảm vốn điều lệ',
+			'Thay đổi người đại diện',
+			'Chuyển nhượng vốn',
+			'Thay đổi ngành nghề kinh doanh',
+		],
+	},
+	{
+		title: 'Tư vấn pháp lý doanh nghiệp',
+		description: 'Giải quyết mọi vấn đề pháp lý phát sinh trong quá trình hoạt động của doanh nghiệp',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		price: 'Liên hệ',
+		href: '/dich-vu/tu-van-phap-ly-doanh-nghiep',
+		color: 'indigo',
+		colorClass: 'from-indigo-600 to-indigo-800',
+		bgColorClass: 'bg-indigo-100',
+		textColorClass: 'text-indigo-600',
+		features: [
+			'Tư vấn hợp đồng',
+			'Thuê ngoài phòng pháp chế',
+			'Rà soát quy chế doanh nghiệp',
+			'Giải quyết tranh chấp',
+			'Tư vấn lao động',
+			'Tư vấn thương mại',
+		],
+	},
+];
+---
+
+<PageLayout
+	title={page.title}
+	icon={page.icon}
+	description={page.description}
+	showPricing={false}
+	heroBackground="/hero-service.jpg"
+>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+		<div class="max-w-6xl mx-auto">
+			<!-- Introduction -->
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-bold text-gray-900 mb-4">
+					Dịch vụ thành lập và quản lý doanh nghiệp
+				</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					TV Legal Count không chỉ trợ giúp khách hàng trong việc thành lập doanh nghiệp, thay đổi đăng ký kinh doanh... mà còn tư vấn và trợ giúp khách hàng là các doanh nghiệp trong và ngoài nước giải quyết mọi vấn đề pháp lý phát sinh trong quá trình hoạt động của doanh nghiệp tại Việt Nam.
+				</p>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{services.map((service) => (
+					<div class="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+						<div class={`bg-gradient-to-r ${service.colorClass} text-white p-6`}>
+							<div class="flex items-start gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40">
+									<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d={service.icon}/>
+									</svg>
+								</div>
+								<div class="flex-1">
+									<h3 class="text-xl font-bold mb-2">{service.title}</h3>
+									<p class="text-white/90 text-sm">{service.description}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="p-6">
+							<ul class="space-y-3 mb-6">
+								{service.features.map((feature) => (
+									<li class="flex items-start">
+										<svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+										</svg>
+										<span class="text-gray-600">{feature}</span>
+									</li>
+								))}
+							</ul>
+
+							<div class="flex items-center justify-between mt-6 pt-6 border-t border-gray-200">
+								<div>
+									<div class="text-sm text-gray-500">Chi phí từ</div>
+									<div class="text-lg font-bold text-gray-900">{service.price}</div>
+								</div>
+								<a
+									href={service.href}
+									class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+								>
+									Xem chi tiết
+									<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</PageLayout>

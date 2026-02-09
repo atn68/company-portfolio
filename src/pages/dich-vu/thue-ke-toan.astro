@@ -1,0 +1,173 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const page = {
+	title: 'Dịch vụ Thuế & Kế toán',
+	description: 'Dịch vụ báo cáo thuế, quyết toán thuế, kế toán trọn gói chuyên nghiệp',
+	icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z',
+};
+
+const services = [
+	{
+		title: 'Kế toán thuế trọn gói',
+		description: 'Dịch vụ kế toán thuế đầy đủ cho doanh nghiệp vừa và nhỏ',
+		icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		price: 'Từ 1.500.000 đồng/tháng',
+		href: '#',
+		color: 'blue',
+		colorClass: 'from-blue-600 to-blue-800',
+		bgColorClass: 'bg-blue-100',
+		textColorClass: 'text-blue-600',
+		features: [
+			'Lập báo cáo thuế hàng tháng/quý',
+			'Báo cáo tài chính năm',
+			'Quyết toán thuế TNDN',
+			'Quyết toán thuế TNCN',
+			'Báo cáo tình hình sử dụng hóa đơn',
+			'Làm việc với cơ quan thuế',
+		],
+	},
+	{
+		title: 'Khai báo thuế ban đầu',
+		description: 'Thủ tục kê khai thuế sau khi thành lập doanh nghiệp',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		price: '500.000 đồng',
+		href: '#',
+		color: 'green',
+		colorClass: 'from-green-600 to-green-800',
+		bgColorClass: 'bg-green-100',
+		textColorClass: 'text-green-600',
+		features: [
+			'Đăng ký kê khai thuế',
+			'Khai báo tình hình sử dụng hóa đơn',
+			'Xác định hình thức kê khai thuế',
+			'Mua chữ ký số',
+			'Đăng ký nộp thuế điện tử',
+		],
+	},
+	{
+		title: 'Quyết toán thuế',
+		description: 'Dịch vụ quyết toán thuế TNDN, TNCN cuối năm',
+		icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'purple',
+		colorClass: 'from-purple-600 to-purple-800',
+		bgColorClass: 'bg-purple-100',
+		textColorClass: 'text-purple-600',
+		features: [
+			'Quyết toán thuế TNDN',
+			'Quyết toán thuế TNCN',
+			'Kiểm tra hóa đơn chứng từ',
+			'Rà soát tính hợp lệ của chi phí',
+			'Tư vấn tối ưu thuế',
+			'Làm việc với cơ quan thuế',
+		],
+	},
+	{
+		title: 'Chuyển đổi cơ quan quản lý thuế',
+		description: 'Thủ tục chuyển đổi cơ quan thuế khi thay đổi địa chỉ',
+		icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+		price: '1.000.000 đồng',
+		href: '#',
+		color: 'indigo',
+		colorClass: 'from-indigo-600 to-indigo-800',
+		bgColorClass: 'bg-indigo-100',
+		textColorClass: 'text-indigo-600',
+		features: [
+			'Chuyển đổi địa điểm nộp thuế',
+			'Đóng/mở mã số thuế',
+			'Hủy mã số thuế',
+			'Thu hồi mã số thuế',
+			'Tư vấn thủ tục thuế',
+		],
+	},
+	{
+		title: 'Kiểm toán báo cáo tài chính',
+		description: 'Dịch vụ kiểm toán báo cáo tài chính độc lập',
+		icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'yellow',
+		colorClass: 'from-yellow-500 to-yellow-700',
+		bgColorClass: 'bg-yellow-100',
+		textColorClass: 'text-yellow-600',
+		features: [
+			'Kiểm toán BCTC',
+			'Báo cáo kiểm toán',
+			'Tư vấn hoàn thiện hệ thống kế toán',
+			'Điều chỉnh sai sót kế toán',
+			'Tư vấn chuẩn mực kế toán',
+		],
+	},
+];
+---
+
+<PageLayout
+	title={page.title}
+	icon={page.icon}
+	description={page.description}
+	showPricing={false}
+	heroBackground="/hero-service.jpg"
+>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+		<div class="max-w-6xl mx-auto">
+			<!-- Introduction -->
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-bold text-gray-900 mb-4">
+					Dịch vụ thuế và kế toán chuyên nghiệp
+				</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Chúng tôi am hiểu về quản lý thuế tại Việt Nam, do đó có thể giúp doanh nghiệp tối ưu từng loại thuế, quản lý và tuân thủ các quy định về thuế. Chúng tôi cung cấp dịch vụ báo cáo thuế, quyết toán thuế, khóa/mở mã số thuế, đăng ký chuyển cơ quan quản lý thuế...
+				</p>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{services.map((service) => (
+					<div class="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+						<div class={`bg-gradient-to-r ${service.colorClass} text-white p-6`}>
+							<div class="flex items-start gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40">
+									<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d={service.icon}/>
+									</svg>
+								</div>
+								<div class="flex-1">
+									<h3 class="text-xl font-bold mb-2">{service.title}</h3>
+									<p class="text-white/90 text-sm">{service.description}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="p-6">
+							<ul class="space-y-3 mb-6">
+								{service.features.map((feature) => (
+									<li class="flex items-start">
+										<svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+										</svg>
+										<span class="text-gray-600 text-sm">{feature}</span>
+									</li>
+								))}
+							</ul>
+
+							<div class="flex items-center justify-between mt-6 pt-6 border-t border-gray-200">
+								<div>
+									<div class="text-sm text-gray-500">Chi phí từ</div>
+									<div class="text-lg font-bold text-gray-900">{service.price}</div>
+								</div>
+								<a
+									href={service.href}
+									class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-sm"
+								>
+									Xem chi tiết
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</PageLayout>

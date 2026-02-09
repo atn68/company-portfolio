@@ -1,0 +1,171 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const page = {
+	title: 'Dịch vụ Đầu tư',
+	description: 'Tư vấn đầu tư, giấy phép đầu tư, chuyển nhượng vốn cho nhà đầu tư nước ngoài',
+	icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+};
+
+const services = [
+	{
+		title: 'Giấy chứng nhận đăng ký đầu tư',
+		description: 'Tư vấn xin cấp Giấy chứng nhận đăng ký đầu tư cho nhà đầu tư nước ngoài',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'blue',
+		colorClass: 'from-blue-600 to-blue-800',
+		bgColorClass: 'bg-blue-100',
+		textColorClass: 'text-blue-600',
+		features: [
+			'Tư vấn điều kiện tiếp cận thị trường',
+			'Chuẩn bị hồ sơ pháp lý nhà đầu tư',
+			'Xin chấp thuận chủ trương đầu tư (nếu có)',
+			'Cấp Giấy chứng nhận đăng ký đầu tư',
+			'Tư vấn ưu đãi đầu tư',
+		],
+	},
+	{
+		title: 'Chuyển nhượng vốn',
+		description: 'Tư vấn thủ tục chuyển nhượng vốn, góp vốn, mua cổ phần cho nhà đầu tư',
+		icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'purple',
+		colorClass: 'from-purple-600 to-purple-800',
+		bgColorClass: 'bg-purple-100',
+		textColorClass: 'text-purple-600',
+		features: [
+			'Thuê, mua lại doanh nghiệp',
+			'Chuyển nhượng vốn điều lệ',
+			'Góp vốn mua cổ phần',
+			'Thu hồi vốn đầu tư',
+			'Tư vấn giá và thủ tục',
+		],
+	},
+	{
+		title: 'Văn phòng đại diện',
+		description: 'Thành lập văn phòng đại diện cho công ty nước ngoài tại Việt Nam',
+		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+		price: 'Từ 3.000.000 đồng',
+		href: '#',
+		color: 'green',
+		colorClass: 'from-green-600 to-green-800',
+		bgColorClass: 'bg-green-100',
+		textColorClass: 'text-green-600',
+		features: [
+			'Giấy phép thành lập VPĐD',
+			'Dăng ký thuế',
+			'Con dấu và tài khoản ngân hàng',
+			'Tư vấn chức năng VPĐD',
+			'Gia hạn giấy phép VPĐD',
+		],
+	},
+	{
+		title: 'Chi nhánh công ty nước ngoài',
+		description: 'Thành lập chi nhánh cho doanh nghiệp nước ngoài tại Việt Nam',
+		icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'indigo',
+		colorClass: 'from-indigo-600 to-indigo-800',
+		bgColorClass: 'bg-indigo-100',
+		textColorClass: 'text-indigo-600',
+		features: [
+			'Giấy phép thành lập chi nhánh',
+			'Dăng ký hoạt động chi nhánh',
+			'Đăng ký thuế và hóa đơn',
+			'Tư vấn hoạt động chi nhánh',
+			'Quản lý chi nhánh',
+		],
+	},
+	{
+		title: 'Dự án đầu tư',
+		description: 'Tư vấn thực hiện dự án đầu tư tại Việt Nam',
+		icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
+		price: 'Liên hệ',
+		href: '#',
+		color: 'yellow',
+		colorClass: 'from-yellow-500 to-yellow-700',
+		bgColorClass: 'bg-yellow-100',
+		textColorClass: 'text-yellow-600',
+		features: [
+			'Tư vấn chủ trương đầu tư',
+			'Giấy chứng nhận đăng ký đầu tư',
+			'Thẩm định giá trị dự án',
+			'Quy trình thực hiện dự án',
+			'Hỗ trợ thực hiện dự án',
+		],
+	},
+];
+---
+
+<PageLayout
+	title={page.title}
+	icon={page.icon}
+	description={page.description}
+	showPricing={false}
+	heroBackground="/hero-service.jpg"
+>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+		<div class="max-w-6xl mx-auto">
+			<!-- Introduction -->
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-bold text-gray-900 mb-4">
+					Dịch vụ tư vấn đầu tư chuyên nghiệp
+				</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Chúng tôi tự hào là đơn vị hàng đầu trong lĩnh vực tư vấn đầu tư với đội ngũ luật sư, chuyên viên tư vấn có nhiều kinh nghiệm trong việc xin cấp giấy phép đầu tư, chuyển nhượng vốn cho nhà đầu tư nước ngoài, thành lập văn phòng đại diện, chi nhánh...
+				</p>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{services.map((service) => (
+					<div class="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+						<div class={`bg-gradient-to-r ${service.colorClass} text-white p-6`}>
+							<div class="flex items-start gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center border-2 border-white/40">
+									<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d={service.icon}/>
+									</svg>
+								</div>
+								<div class="flex-1">
+									<h3 class="text-xl font-bold mb-2">{service.title}</h3>
+									<p class="text-white/90 text-sm">{service.description}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="p-6">
+							<ul class="space-y-3 mb-6">
+								{service.features.map((feature) => (
+									<li class="flex items-start">
+										<svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+										</svg>
+										<span class="text-gray-600 text-sm">{feature}</span>
+									</li>
+								))}
+							</ul>
+
+							<div class="flex items-center justify-between mt-6 pt-6 border-t border-gray-200">
+								<div>
+									<div class="text-sm text-gray-500">Chi phí từ</div>
+									<div class="text-lg font-bold text-gray-900">{service.price}</div>
+								</div>
+								<a
+									href={service.href}
+									class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-sm"
+								>
+									Xem chi tiết
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</PageLayout>

@@ -1,0 +1,136 @@
+---
+import { companyInfo, navLinks } from '../../config';
+
+const logoLetter = companyInfo.name.charAt(0);
+const primaryBg600 = 'bg-blue-600';
+---
+
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+	<nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex justify-between items-center h-16">
+			<!-- Logo -->
+			<a href="/" class="flex items-center space-x-2">
+				<div class={`w-8 h-8 ${primaryBg600} rounded-lg flex items-center justify-center`}>
+					<span class="text-white font-bold text-lg">{logoLetter}</span>
+				</div>
+				<span class="text-xl font-bold text-gray-900">{companyInfo.name}</span>
+			</a>
+
+			<!-- Desktop Navigation -->
+			<div class="hidden md:flex items-center space-x-8">
+				{navLinks.map((item) => (
+					item.children ? (
+						<div class="relative group">
+							<button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-5">
+								<span>{item.name}</span>
+								<svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+								</svg>
+							</button>
+							<div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+								<div class="bg-white rounded-lg shadow-xl border border-gray-200 py-2 px-2 min-w-[280px]">
+									{item.children.map((child) => (
+										<a
+											href={child.href}
+											class="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-150"
+										>
+											{child.name}
+										</a>
+									))}
+								</div>
+							</div>
+						</div>
+					) : (
+						<a
+							href={item.href}
+							class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+						>
+							{item.name}
+						</a>
+					)
+				))}
+			</div>
+
+			<!-- Mobile menu button -->
+			<button
+				type="button"
+				id="mobile-menu-button"
+				class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+				aria-label="Main menu"
+			>
+				<svg
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					/>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile Navigation -->
+		<div class="md:hidden hidden pb-4" id="mobile-menu">
+			<div class="space-y-1">
+				{navLinks.map((item) => (
+					item.children ? (
+						<div class="mobile-dropdown">
+							<button class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 mobile-dropdown-button">
+								<span>{item.name}</span>
+								<svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+								</svg>
+							</button>
+							<div class="hidden pl-4 space-y-1 mt-1 mobile-dropdown-content">
+								{item.children.map((child) => (
+									<a
+										href={child.href}
+										class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+									>
+										{child.name}
+									</a>
+								))}
+							</div>
+						</div>
+					) : (
+						<a
+							href={item.href}
+							class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+						>
+							{item.name}
+						</a>
+					)
+				))}
+			</div>
+		</div>
+	</nav>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>
+
+<script>
+	// Mobile menu toggle
+	const mobileMenuButton = document.getElementById('mobile-menu-button');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	mobileMenuButton?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+
+	// Mobile dropdown toggles
+	const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown-button');
+	mobileDropdownButtons.forEach((button) => {
+		button?.addEventListener('click', (e) => {
+			const dropdown = e.currentTarget?.nextElementSibling as HTMLElement;
+			const icon = e.currentTarget?.querySelector('svg') as HTMLElement;
+			dropdown?.classList.toggle('hidden');
+			icon?.classList.toggle('rotate-180');
+		});
+	});
+</script>

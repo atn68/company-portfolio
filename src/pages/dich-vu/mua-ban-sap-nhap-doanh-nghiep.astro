@@ -1,0 +1,50 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const service = {
+	id: 'ma-business',
+	title: 'Mua bán & Sáp nhập doanh nghiệp',
+	icon: 'M8 7h12m0 0l-4-4m4 4l-4-4m0 6H4m0 0l4-4m-4 4l4 4',
+	description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+	price: 'Liên hệ',
+	timeframe: '15 đến 30 ngày làm việc',
+	whatYouProvide: [
+		'Thông tin về doanh nghiệp mục tiêu',
+		'Ý định mua/sáp nhập cụ thể',
+		'Giấy tờ pháp lý của doanh nghiệp',
+		'Báo cáo tài chính (nếu có)',
+		'Giấy ủy quyền',
+	],
+	whatYouReceive: [
+		'Thẩm định pháp lý doanh nghiệp mục tiêu',
+		'Thẩm định tài chính',
+		'Soạn thảo hợp đồng M&A',
+		'Hỗ trợ đàm phán',
+		'Thi hành thủ tục pháp lý',
+		'Tư vấn miễn phí các vấn đề phát sinh',
+	],
+	consulting: [
+		'Tư vấn về loại hình M&A phù hợp',
+		'Tư vấn về điều kiện pháp lý',
+		'Tư vấn về thẩm định',
+		'Tư vấn về đàm phán',
+		'Tư vấn về thủ tục sau M&A',
+		'Tư vấn miễn phí các vấn đề phát sinh',
+	],
+};
+---
+
+<PageLayout title={service.title} icon={service.icon} description={service.description} price={service.price} timeframe={service.timeframe} showPricing={true} heroBackground="/hero-service.jpg">
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">DỊCH VỤ M&A CỦA CHÚNG TÔI</h2></div>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+		{[{title:'M&A Chiều dọc',desc:'Cùng chuỗi giá trị sản xuất'},{title:'M&A Chiều ngang',desc:'Cùng ngành, đối thủ cạnh tranh'},{title:'M&A Kết hợp',desc:'Cùng đối tượng, sản phẩm bổ sung'}].map((item)=><div class="bg-white p-6 rounded-lg shadow"><h3 class="font-bold mb-2">{item.title}</h3><p class="text-gray-600 text-sm">{item.desc}</p></div>)}
+	</div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">KHÁCH HÀNG CẦN CUNG CẤP</h2><ul class="space-y-4">{service.whatYouProvide.map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">SẢN PHẨM NHẬN ĐƯỢC</h2><ul class="space-y-4">{service.whatYouReceive.map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-green-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-6xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">QUY TRÌNH M&A</h2></div><div class="space-y-6">{[{step:'1',title:'Chiến lược & Tìm kiếm',desc:'Xác định mục tiêu và tìm doanh nghiệp phù hợp'},{step:'2',title:'Đàm phán sơ bộ',desc:'Thư ý định và phác thảo điều khoản cơ bản'},{step:'3',title:'Thẩm định',desc:'Thẩm định tài chính và pháp lý chi tiết'},{step:'4',title:'Thẩm định giá',desc:'Định giá doanh nghiệp bởi chuyên gia'},{step:'5',title:'Ký kết',desc:'Đàm phán cuối và ký hợp đồng M&A'}].map((item)=><div class="flex gap-6"><div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">{item.step}</div><div class="flex-1 bg-white p-6 rounded-lg shadow"><h3 class="text-xl font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div></div>)}</div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">FAQ</h2></div><div class="space-y-4">{[{q:'Lưu ý pháp lý khi M&A?',a:'<ul class="list-disc ml-6"><li>Điều kiện tiếp cận thị trường cho nhà đầu tư nước ngoài</li><li>Báo cáo tập trung kinh tế nếu ảnh hưởng cạnh tranh</li><li>Giấy phép đầu tư cho nhà đầu tư nước ngoài</li></ul>'},{q:'Thủ tục chuyển nhượng cổ phần?',a:'<ol class="list-decimal ml-6"><li>Ký hợp đồng chuyển nhượng</li><li>Biên bản xác nhận</li><li>Đại hội đồng cổ đông thông qua</li><li>Đăng ký thay đổi cổ đông</li><li>Kê khai thuế TNCN</li></ol>'},{q:'Khó khăn hậu M&A?',a:'<ul class="list-disc ml-6"><li>Về nhân sự: cắt giảm hoặc đào tạo lại</li><li>Xây dựng uy tín với khách hàng</li><li>Văn hóa công ty</li><li>Quản trị doanh nghiệp</li></ul>'}].map((faq)=><div class="bg-white rounded-lg shadow overflow-hidden"><details class="group"><summary class="flex justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100"><h3 class="font-semibold pr-4">{faq.q}</h3><svg class="w-6 h-6 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="p-6 border-t prose prose-sm" set:html={faq.a}/></details></div>)}</div></div></div></section>
+</PageLayout>

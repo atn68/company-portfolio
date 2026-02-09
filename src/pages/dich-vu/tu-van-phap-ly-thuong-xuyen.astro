@@ -1,0 +1,45 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const service = {
+	id: 'legal-consulting',
+	title: 'Tư vấn Pháp lý thường xuyên',
+	icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+	description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+	price: 'Liên hệ',
+	timeframe: 'Theo tháng/quý',
+	whatYouProvide: [
+		'Thông tin về doanh nghiệp',
+		'Loại hình doanh nghiệp',
+		'Ngành nghề kinh doanh',
+		'Số lượng nhân sự',
+		'Yêu cầu cụ thể',
+	],
+	whatYouReceive: [
+		'Cập nhật văn bản pháp luật mới',
+		'Tư vấn pháp luật doanh nghiệp',
+		'Tư vấn pháp luật lao động',
+		'Tư vấn hợp đồng thương mại',
+		'Giải đáp tranh chấp',
+		'Hỗ trợ qua điện thoại, email, trực tiếp',
+	],
+	consulting: [
+		'Cập nhật pháp luật định kỳ',
+		'Rà soát, sửa đổi điều lệ',
+		'Tư vấn biên bản họp, quyết định',
+		'Tư vấn nội quy lao động',
+		'Tư vấn hợp đồng',
+		'Tư vấn miễn phí',
+	],
+};
+---
+
+<PageLayout title={service.title} icon={service.icon} description={service.description} price={service.price} timeframe={service.timeframe} showPricing={true} heroBackground="/hero-service.jpg">
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">GIÁ TRỊ NHẬN ĐƯỢC</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6">{[{title:'Sự An tâm',desc:'Công ty luật tận tâm, am hiểu pháp luật'},{title:'Sự Chủ động',desc:'Luôn cập nhật kiến thức pháp lý mới'},{title:'Sự Rõ ràng',desc:'Quản lý, cổ đông, người lao động, đối tác'}].map((item)=><div class="bg-white p-6 rounded-lg shadow"><h3 class="font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div>)}</div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">NỘI DUNG CÔNG VIỆC</h2><ul class="space-y-4">{service.consulting.map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-purple-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">HÌNH THỨC TƯ VẤN</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6">{[{title:'Điện thoại',icon:'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493-1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z'},{title:'Email',icon:'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'},{title:'Trực tiếp',icon:'M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'}].map((item)=><div class="bg-white p-6 rounded-lg shadow text-center"><svg class="w-12 h-12 mx-auto mb-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/></svg><h3 class="font-bold mb-2">{item.title}</h3></div>)}</div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">FAQ</h2></div><div class="space-y-4">{[{q:'Chi phí dịch vụ?',a:'Chi phí phụ thuộc từng trường hợp. Liên hệ TV Legal Count để được tư vấn và báo giá chi tiết.'},{q:'Thời gian tư vấn?',a:'Luôn có luật sư sẵn sàng giải đáp qua điện thoại, email hoặc gặp trực tiếp khi cần thiết.'}].map((faq)=><div class="bg-white rounded-lg shadow overflow-hidden"><details class="group"><summary class="flex justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100"><h3 class="font-semibold pr-4">{faq.q}</h3><svg class="w-6 h-6 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="p-6 border-t prose prose-sm" set:html={faq.a}/></details></div>)}</div></div></div></section>
+</PageLayout>

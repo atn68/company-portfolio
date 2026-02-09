@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const service = {
+	id: 'contract-review',
+	title: 'Rà soát & Xây dựng Hợp đồng',
+	icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+	description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+	price: 'Liên hệ',
+	timeframe: '3 đến 7 ngày làm việc',
+	whatYouProvide: [
+		'Bản dự thảo hợp đồng (nếu có)',
+		'Thông tin về các bên tham gia',
+		'Nội dung chính của hợp đồng',
+		'Yêu cầu cụ thể',
+	],
+	whatYouReceive: [
+		'Soạn thảo hợp đồng',
+		'Rà soát tính pháp lý',
+		'Đánh giá rủi ro',
+		'Tư vấn điều khoản',
+		'Đảm bảo quyền lợi',
+		'Tư vấn miễn phí',
+	],
+	consulting: [
+		'Tư vấn loại hình hợp đồng',
+		'Tư vấn điều khoản pháp lý',
+		'Tư vấn bảo vệ quyền lợi',
+		'Tư vấn giảm thiểu rủi ro',
+		'Tư vấn thi hành án lệ',
+		'Tư vấn miễn phí',
+	],
+};
+---
+
+<PageLayout title={service.title} icon={service.icon} description={service.description} price={service.price} timeframe={service.timeframe} showPricing={true} heroBackground="/hero-service.jpg">
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">DỊCH VỤ CỦA CHÚNG TÔI</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6">{[{title:'Soạn thảo',desc:'Soạn thảo hợp đồng thương mại'},{title:'Rà soát',desc:'Kiểm tra tính pháp lý, rủi ro'},{title:'Tư vấn',desc:'Tư vấn nội dung, điều khoản'}].map((item)=><div class="bg-white p-6 rounded-lg shadow"><h3 class="font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div>)}</div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">LOẠI HÌNH HỢP ĐỒNG</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">{[{title:'Hợp đồng thương mại',icon:'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M7 13v4m0 0h.01M7 13h.01M7 16v.01M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H4a1 1 0 00-1 1v9a1 1 0 001 1z'},{title:'Hợp đồng lao động',icon:'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'},{title:'Hợp đồng đầu tư',icon:'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'}].map((item)=><div class="bg-white p-6 rounded-lg border"><svg class="w-10 h-10 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/></svg><h3 class="font-bold">{item.title}</h3></div>)}</div></div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8"><h2 class="text-2xl font-bold text-gray-900 mb-6">TẠI SAO CẦN RÀ SOÁT HỢP ĐỒNG?</h2><ul class="space-y-4">{['Phát hiện điều khoản bất lợi, rủi ro pháp lý','Đảm bảo tính pháp lý và hiệu lực','Bảo vệ quyền và lợi ích doanh nghiệp','Tránh tranh chấp, kiện tụng','Tối ưu nội dung hợp đồng'].map((item)=><li class="flex items-start"><svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>{item}</span></li>)}</ul></div></div></div></section>
+
+	<section class="py-16 bg-gray-50"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">QUY TRÌNH 5 BƯỚC</h2></div><div class="space-y-6">{[{step:'1',title:'Tiếp nhận',desc:'Tiếp nhận yêu cầu và thông tin'},{step:'2',title:'Tư vấn',desc:'Tư vấn loại hình hợp đồng'},{step:'3',title:'Soạn thảo/Rà soát',desc:'Soạn thảo hoặc rà soát hợp đồng'},{step:'4',title:'Tham vấn',desc:'Tham vấn và chỉnh sửa'},{step:'5',title:'Hoàn thành',desc:'Bàn giao bản hoàn thiện'}].map((item)=><div class="flex gap-6"><div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">{item.step}</div><div class="flex-1 bg-white p-6 rounded-lg shadow"><h3 class="text-xl font-bold mb-2">{item.title}</h3><p>{item.desc}</p></div></div>)}</div></div></div></section>
+
+	<section class="py-16"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">FAQ</h2></div><div class="space-y-4">{[{q:'Tại sao cần rà soát hợp đồng?',a:'Rà soát giúp phát hiện điều khoản bất lợi, đảm bảo tính pháp lý, bảo vệ quyền lợi và tránh tranh chấp.'},{q:'Chi phí dịch vụ?',a:'Chi phí phụ thuộc loại hình hợp đồng, độ phức tạp. Liên hệ để nhận báo giá chi tiết.'},{q:'Quy trình soạn thảo?',a:'1) Tiếp nhận yêu cầu 2) Tư vấn loại hình 3) Soạn thảo 4) Xem xét 5) Hoàn thiện.']}.map((faq)=><div class="bg-white rounded-lg shadow overflow-hidden"><details class="group"><summary class="flex justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100"><h3 class="font-semibold pr-4">{faq.q}</h3><svg class="w-6 h-6 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="p-6 border-t prose prose-sm" set:html={faq.a}/></details></div>)}</div></div></div></section>
+</PageLayout>

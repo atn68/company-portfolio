@@ -1,0 +1,313 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const service = {
+	id: 'household-business',
+	title: 'Thành lập Hộ kinh doanh',
+	icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+	description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
+	price: '1.500.000 đồng',
+	timeframe: '3 đến 5 ngày làm việc',
+	whatYouProvide: [
+		'CCCD/CMND/Hộ chiếu của chủ hộ kinh doanh và các thành viên (nếu có)',
+		'Địa chỉ đặt hộ kinh doanh',
+		'Tên hộ kinh doanh',
+		'Ngành nghề kinh doanh',
+		'Vốn kinh doanh',
+	],
+	whatYouReceive: [
+		'Giấy chứng nhận đăng ký hộ kinh doanh',
+		'Đăng ký kê khai thuế ban đầu',
+		'Mua chữ ký số',
+		'Đăng ký hóa đơn điện tử',
+		'Hỗ trợ treo biển hiệu theo đúng quy định',
+		'Hỗ trợ mở tài khoản ngân hàng (nếu cần)',
+		'Tư vấn miễn phí các vấn đề phát sinh',
+	],
+	consulting: [
+		'Tư vấn lựa chọn ngành nghề kinh doanh phù hợp',
+		'Tư vấn về địa chỉ đặt hộ kinh doanh',
+		'Tư vấn về vốn kinh doanh',
+		'Tư vấn về tên hộ kinh doanh',
+		'Tư vấn về hình thức kê khai thuế',
+		'Tư vấn miễn phí các vấn đề phát sinh',
+	],
+};
+---
+
+<PageLayout
+	title={service.title}
+	icon={service.icon}
+	description={service.description}
+	price={service.price}
+	timeframe={service.timeframe}
+	showPricing={true}
+	heroBackground="/hero-service.jpg"
+>
+	<!-- What You Provide Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+					<h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+						<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+							</svg>
+						</div>
+						KHÁCH HÀNG CẦN CUNG CẤP GÌ?
+					</h2>
+					<ul class="space-y-4">
+						{service.whatYouProvide.map((item) => (
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-blue-600 mt-0.5 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+								<span class="text-gray-700 text-lg">{item}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What You Receive Section -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+					<h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+						<div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+							</svg>
+						</div>
+						SẢN PHẨM KHÁCH HÀNG SẼ NHẬN ĐƯỢC
+					</h2>
+					<ul class="space-y-4">
+						{service.whatYouReceive.map((item) => (
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-green-600 mt-0.5 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+								</svg>
+								<span class="text-gray-700 text-lg">{item}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Consulting Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+					<h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+						<div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+							</svg>
+						</div>
+						LUẬT SƯ SẼ TƯ VẤN NHỮNG GÌ?
+					</h2>
+					<ul class="space-y-4">
+						{service.consulting.map((item) => (
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-purple-600 mt-0.5 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+								</svg>
+								<span class="text-gray-700 text-lg">{item}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose TV Legal Count Section -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">TẠI SAO HƠN 2.000 KHÁCH HÀNG ĐÃ CHỌN TV LEGAL COUNT ĐỒNG HÀNH?</h2>
+					<p class="text-xl text-gray-600">Chúng tôi cam kết mang lại giá trị vượt trội cho bạn</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{[
+						{
+							title: 'KINH NGHIỆM',
+							icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+							color: 'blue',
+							items: [
+								'10+ năm kinh nghiệm trong lĩnh vực tư vấn pháp lý',
+								'Đội ngũ luật sư, chuyên viên pháp lý giàu kinh nghiệm',
+								'Thực hiện thành công hơn 2.000 hộ kinh doanh',
+								'Hiểu rõ quy định pháp luật Việt Nam',
+							],
+						},
+						{
+							title: 'TRỌN GÓI',
+							icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+							color: 'green',
+							items: [
+								'Tư vấn và thực hiện từ A-Z',
+								'Giấy chứng nhận hộ kinh doanh',
+								'Kê khai thuế, chữ ký số',
+								'Hóa đơn điện tử',
+							],
+						},
+						{
+							title: 'NHÂN SỰ',
+							icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+							color: 'purple',
+							items: [
+								'Đội ngũ luật sư giỏi, tận tâm, chuyên nghiệp',
+								'Thiết thực, sẻ chia, đồng hành cùng khách hàng',
+								'Phục vụ từ 7:30 đến 21:00 mỗi ngày',
+								'Hỗ trợ qua nhiều kênh: Hotline, Zalo, Email',
+							],
+						},
+						{
+							title: 'GIÁ DỊCH VỤ',
+							icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+							color: 'yellow',
+							items: [
+								'Chi phí hợp lý, cạnh tranh nhất thị trường',
+								'Bảng giá dịch vụ minh bạch, rõ ràng',
+								'Không phát sinh chi phí ẩn',
+								'Tư vấn miễn phí 100% các vấn đề pháp lý',
+							],
+						},
+						{
+							title: 'QUY TRÌNH DỊCH VỤ',
+							icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+							color: 'red',
+							items: [
+								'Tiếp nhận yêu cầu trong vòng 15 phút',
+								'Tư vấn chi tiết, báo giá rõ ràng',
+								'Thi hành nhanh chóng, đúng tiến độ',
+								'Bàn giao hồ sơ đầy đủ, đúng luật',
+							],
+						},
+						{
+							title: 'HỖ TRỢ TRỌN ĐỜI',
+							icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+							color: 'pink',
+							items: [
+								'Hỗ trợ, tư vấn miễn phí trọn đời',
+								'Giải đáp mọi thắc mắc pháp lý',
+								'Hỗ trợ tiếp đoàn thẩm định',
+								'Đồng hành cùng phát triển',
+							],
+						},
+					].map((feature) => (
+						<div class="bg-white rounded-lg shadow-lg border border-gray-100 p-6">
+							<div class="flex items-center gap-3 mb-4">
+								<div class={`w-12 h-12 bg-${feature.color}-100 rounded-lg flex items-center justify-center flex-shrink-0`}>
+									<svg class={`w-6 h-6 text-${feature.color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={feature.icon}/>
+									</svg>
+								</div>
+								<h3 class={`text-xl font-bold text-${feature.color}-600`}>{feature.title}</h3>
+							</div>
+							<ul class="space-y-2">
+								{feature.items.map((item) => (
+									<li class="flex items-start">
+										<svg class="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+										</svg>
+										<span class="text-gray-600">{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Process Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">QUY TRÌNH 5 BƯỚC THÀNH LẬP HỘ KINH DOANH</h2>
+					<p class="text-xl text-gray-600">Chúng tôi cam kết quy trình nhanh chóng, chuyên nghiệp</p>
+				</div>
+
+				<div class="space-y-6">
+					{[
+						{ step: '1', title: 'Tiếp nhận yêu cầu', desc: 'Bạn gửi yêu cầu tư vấn qua hotline, email hoặc form liên hệ' },
+						{ step: '2', title: 'Tư vấn và giải đáp', desc: 'Luật sư/chuyên viên tư vấn chi tiết về ngành nghề, địa chỉ, thủ tục' },
+						{ step: '3', title: 'Báo giá và chuẩn bị', desc: 'Gửi báo giá chi tiết và hướng dẫn chuẩn bị hồ sơ cần thiết' },
+						{ step: '4', title: 'Thực hiện dịch vụ', desc: 'Thủ tục thành lập hộ kinh doanh, kê khai thuế, hóa đơn điện tử' },
+						{ step: '5', title: 'Hoàn thành và bàn giao', desc: 'Bàn giao giấy chứng nhận và các tài liệu cho khách hàng' },
+					].map((item) => (
+						<div class="flex gap-6 items-start">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+								{item.step}
+							</div>
+							<div class="flex-1 bg-white p-6 rounded-lg shadow-md">
+								<h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+								<p class="text-gray-600">{item.desc}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">MỘT SỐ CÂU HỎI THƯỜNG GẶP</h2>
+					<p class="text-xl text-gray-600">Giải đáp những thắc mắc phổ biến về thành lập hộ kinh doanh</p>
+				</div>
+
+				<div class="space-y-4">
+					{[
+						{
+							q: 'Công chức, viên chức có thể thành lập hộ kinh doanh không?',
+							a: '<p>Công chức, viên chức có thể tham gia, thành lập hộ kinh doanh theo điều 80 Nghị định 01/2021/NĐ-CP.</p><p class="mt-2">Ngoài ra, theo quy định tại điều 17 Luật Doanh nghiệp 2020 thì công chức, viên chức có quyền góp vốn, mua cổ phần, mua phần vốn góp vào công ty cổ phần, công ty trách nhiệm hữu hạn, công ty hợp danh.</p>',
+						},
+						{
+							q: 'Nộp hồ sơ đăng ký hộ kinh doanh ở đâu?',
+							a: '<p>Công dân có thể nộp hồ sơ đăng ký hộ kinh doanh cá thể tại bộ phận tiếp nhận hồ sơ – trả kết quả của Cơ quan đăng ký kinh doanh cấp quận/ huyện nơi đặt địa điểm kinh doanh; hoặc có thể đăng ký online tại trang dịch vụ công của Sở kế hoạch và Đầu tư tỉnh/thành phố.</p>',
+						},
+						{
+							q: 'Hộ kinh doanh có thể chuyển nhượng được không?',
+							a: '<p>Hiện nay pháp luật cho phép việc chuyển nhượng hoặc bán hộ kinh doanh. Hộ kinh doanh vẫn phải chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của hộ kinh doanh phát sinh trong thời gian trước ngày chuyển giao hộ kinh doanh, trừ trường hợp có thỏa thuận khác.</p><p class="mt-2">Thực tế, cơ quan thuế vẫn tiến hành áp dụng theo quy định của nghị định 78/2015/NĐ-CP, nếu muốn chuyển nhượng hộ kinh doanh thì bắt buộc phải thực hiện dưới một trong hai hình thức:</p><ul class="list-disc ml-6 mt-2"><li>Làm thủ tục chấm dứt hộ kinh doanh đang hoạt động, đăng ký thành lập hộ kinh doanh mới.</li><li>Ký kết hợp đồng hợp tác đầu tư giữa bên chủ mới và bên chủ cũ.</li></ul>',
+						},
+						{
+							q: 'Hộ kinh doanh có thể tạm ngừng kinh doanh trong bao lâu?',
+							a: '<p>Trường hợp tạm ngừng kinh doanh từ 30 ngày trở lên, hộ kinh doanh phải thông báo với Cơ quan đăng ký kinh doanh cấp huyện nơi đã đăng ký kinh doanh và Cơ quan thuế trực tiếp quản lý (theo khoản 1 Điều 91 Nghị định 01/2021/NĐ-CP).</p><p class="mt-2">Như vậy có thể hiểu, hộ kinh doanh có thể tạm ngừng kinh doanh vô thời hạn.</p>',
+						},
+					].map((faq) => (
+						<div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+							<details class="group">
+								<summary class="flex items-center justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+									<h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.q}</h3>
+									<svg class="w-6 h-6 text-gray-500 transform group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+									</svg>
+								</summary>
+								<div class="p-6 border-t border-gray-200">
+									<div class="prose prose-sm max-w-none text-gray-700" set:html={faq.a} />
+								</div>
+							</details>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+</PageLayout>
