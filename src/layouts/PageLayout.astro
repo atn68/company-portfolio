@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import { companyInfo } from "../config";
+import { getFullPath } from "../utils/url";
 
 interface Props {
   title: string;
@@ -31,7 +32,7 @@ const {
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <ol class="flex items-center space-x-2 text-sm">
         <li>
-          <a href="/" class="text-gray-500 hover:text-gray-700">Trang chủ</a>
+          <a href={getFullPath("/")} class="text-gray-500 hover:text-gray-700">Trang chủ</a>
         </li>
         <li>
           <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +41,7 @@ const {
           </svg>
         </li>
         <li>
-          <a href="/dich-vu" class="text-gray-500 hover:text-gray-700">Dịch vụ</a>
+          <a href={getFullPath("/dich-vu")} class="text-gray-500 hover:text-gray-700">Dịch vụ</a>
         </li>
         <li>
           <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +112,7 @@ const {
   <slot />
 
   <!-- CTA Section -->
-  <section class="bg-blue-600 text-white py-16">
+  <section class="bg-blue-700 text-white py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Bạn cần tư vấn thêm?</h2>
@@ -120,14 +121,14 @@ const {
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/lien-he"
-            class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
+            href={getFullPath("/lien-he")}
+            class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
           >
             Gửi yêu cầu tư vấn
           </a>
           <a
             href={`tel:${companyInfo.hotline.replace(/[\s+]/g, "")}`}
-            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200 inline-block"
+            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors duration-200 inline-block"
           >
             Hotline: {companyInfo.hotline}
           </a>

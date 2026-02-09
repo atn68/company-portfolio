@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { companyInfo } from "../config";
+import { getFullPath } from "../utils/url";
 import { Image } from "astro:assets";
 import heroBg from "../assets/hero-bg.jpg";
 ---
@@ -55,7 +56,7 @@ import heroBg from "../assets/hero-bg.jpg";
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="/dich-vu"
+            href={getFullPath("/dich-vu")}
             class="group relative inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             Xem dịch vụ của chúng tôi
@@ -139,25 +140,25 @@ import heroBg from "../assets/hero-bg.jpg";
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center">
-          <div class="text-4xl sm:text-5xl font-bold text-blue-600 mb-2">
+          <div class="text-4xl sm:text-5xl font-bold text-blue-700 mb-2">
             <span class="stat-number" data-count="2000" data-suffix="+">0</span>
           </div>
           <div class="text-gray-600">Khách hàng tin tưởng</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl sm:text-5xl font-bold text-blue-600 mb-2">
+          <div class="text-4xl sm:text-5xl font-bold text-blue-700 mb-2">
             <span class="stat-number" data-count="10" data-suffix="+">0</span>
           </div>
           <div class="text-gray-600">Năm kinh nghiệm</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl sm:text-5xl font-bold text-blue-600 mb-2">
+          <div class="text-4xl sm:text-5xl font-bold text-blue-700 mb-2">
             <span class="stat-number" data-count="100" data-suffix="+">0</span>
           </div>
           <div class="text-gray-600">Đội ngũ chuyên gia</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl sm:text-5xl font-bold text-blue-600 mb-2">
+          <div class="text-4xl sm:text-5xl font-bold text-blue-700 mb-2">
             <span class="stat-number" data-count="99" data-suffix="%">0</span>
           </div>
           <div class="text-gray-600">Khách hàng hài lòng</div>
@@ -183,7 +184,7 @@ import heroBg from "../assets/hero-bg.jpg";
         >
           <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
             <svg
-              class="w-6 h-6 text-blue-600"
+              class="w-6 h-6 text-blue-700"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -203,8 +204,8 @@ import heroBg from "../assets/hero-bg.jpg";
             pháp lý phát sinh trong quá trình hoạt động của doanh nghiệp tại Việt Nam.
           </p>
           <a
-            href="/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,8 +242,8 @@ import heroBg from "../assets/hero-bg.jpg";
             chi nhánh...
           </p>
           <a
-            href="/dich-vu#legal"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/dich-vu#legal")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -279,8 +280,8 @@ import heroBg from "../assets/hero-bg.jpg";
             giải thể doanh nghiệp...
           </p>
           <a
-            href="/dich-vu#accounting"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/dich-vu#accounting")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,8 +317,8 @@ import heroBg from "../assets/hero-bg.jpg";
             xuyên, rà soát, xây dựng hợp đồng, xây dựng và rà soát quy chế, lao động - BHXH...
           </p>
           <a
-            href="/lien-he"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/lien-he")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -352,8 +353,8 @@ import heroBg from "../assets/hero-bg.jpg";
             <li>- Công bố lưu hành mỹ phẩm</li>
           </ul>
           <a
-            href="/lien-he"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/lien-he")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -393,8 +394,8 @@ import heroBg from "../assets/hero-bg.jpg";
             </ul>
           </p>
           <a
-            href="/lien-he"
-            class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
+            href={getFullPath("/lien-he")}
+            class="text-blue-700 hover:text-blue-700 font-medium inline-flex items-center"
           >
             Tìm hiểu thêm
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -408,8 +409,8 @@ import heroBg from "../assets/hero-bg.jpg";
       <!-- View All Services Button -->
       <div class="text-center mt-12">
         <a
-          href="/dich-vu"
-          class="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+          href={getFullPath("/dich-vu")}
+          class="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
         >
           Xem tất cả dịch vụ
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -425,7 +426,7 @@ import heroBg from "../assets/hero-bg.jpg";
   </section>
 
   <!-- CTA Section -->
-  <section class="bg-blue-600 text-white py-16">
+  <section class="bg-blue-700 text-white py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sẵn sàng bắt đầu?</h2>
@@ -433,8 +434,8 @@ import heroBg from "../assets/hero-bg.jpg";
           Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí
         </p>
         <a
-          href="/lien-he"
-          class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
+          href={getFullPath("/lien-he")}
+          class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
         >
           Liên hệ ngay
         </a>

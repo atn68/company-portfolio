@@ -1,17 +1,21 @@
 ---
 import { companyInfo, navLinks, socialLinks } from "../../config";
+import { getNavWithBase, getFullPath } from "../../utils/url";
 
 const currentYear = new Date().getFullYear();
 
 const logoLetter = companyInfo.name.charAt(0);
 
-const primaryBg600 = "bg-blue-600";
+const primaryBg600 = "bg-blue-700";
+
+// Get nav links with base prefix
+const navLinksWithBase = getNavWithBase(navLinks);
 
 const services = [
-  { name: "Tư vấn pháp lý", href: "/dich-vu#legal" },
-  { name: "Thành lập doanh nghiệp", href: "/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam" },
-  { name: "Kế toán thuế", href: "/dich-vu#accounting" },
-  { name: "Đầu tư", href: "/dich-vu#investment" },
+  { name: "Tư vấn pháp lý", href: getFullPath("/dich-vu#legal") },
+  { name: "Thành lập doanh nghiệp", href: getFullPath("/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam") },
+  { name: "Kế toán thuế", href: getFullPath("/dich-vu#accounting") },
+  { name: "Đầu tư", href: getFullPath("/dich-vu#investment") },
 ];
 ---
 
@@ -46,7 +50,7 @@ const services = [
         <h3 class="text-lg font-semibold mb-4">Liên kết nhanh</h3>
         <ul class="space-y-2">
           {
-            navLinks.map((link) => (
+            navLinksWithBase.map((link) => (
               <li>
                 <a
                   href={link.href}

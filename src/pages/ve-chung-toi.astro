@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getFullPath } from "../utils/url";
 ---
 
 <Layout title="Về chúng tôi - TV Legal Count">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+  <section class="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-20">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">Về chúng tôi</h1>
@@ -46,7 +47,7 @@ import Layout from "../layouts/Layout.astro";
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
             >
               <svg
-                class="w-8 h-8 text-blue-600"
+                class="w-8 h-8 text-blue-700"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -117,7 +118,7 @@ import Layout from "../layouts/Layout.astro";
 					<h2 class="text-3xl font-bold text-gray-900 mb-8">Đội ngũ lãnh đạo</h2>
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 						<div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-							<div class="w-24 h-24 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+							<div class="w-24 h-24 bg-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center">
 								<svg
 									class="w-12 h-12 text-white"
 									fill="currentColor"
@@ -129,7 +130,7 @@ import Layout from "../layouts/Layout.astro";
 							<h3 class="text-xl font-bold text-gray-900 text-center mb-1">
 								Nguyễn Văn A
 							</h3>
-							<p class="text-blue-600 text-center mb-3">CEO & Founder</p>
+							<p class="text-blue-700 text-center mb-3">CEO & Founder</p>
 							<p class="text-gray-600 text-center text-sm">
 								15 năm kinh nghiệm trong lĩnh vực tư vấn pháp lý và quản trị doanh nghiệp
 							</p>
@@ -179,7 +180,7 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- CTA Section -->
-  <section class="bg-blue-600 text-white py-16">
+  <section class="bg-blue-700 text-white py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Muốn biết thêm?</h2>
@@ -187,8 +188,8 @@ import Layout from "../layouts/Layout.astro";
           Liên hệ với chúng tôi để tìm hiểu thêm về dịch vụ và giải pháp của chúng tôi
         </p>
         <a
-          href="/lien-he"
-          class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
+          href={getFullPath("/lien-he")}
+          class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block"
         >
           Liên hệ ngay
         </a>

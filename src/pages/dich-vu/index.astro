@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { companyInfo } from '../../config';
+import { getFullPath } from '../../utils/url';
 
 const services = [
 	{
@@ -8,9 +9,9 @@ const services = [
 		title: 'Thành lập doanh nghiệp vốn Việt Nam',
 		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
 		color: 'blue',
-		colorClass: 'from-blue-600 to-blue-800',
+		colorClass: 'from-blue-700 to-blue-800',
 		bgColorClass: 'bg-blue-100',
-		textColorClass: 'text-blue-600',
+		textColorClass: 'text-blue-700',
 		description: 'Hãy để chúng tôi là cánh tay đắc lực hỗ trợ bạn!',
 		detailPage: '/dich-vu/thanh-lap-doanh-nghiep-von-viet-nam',
 		whatYouProvide: [
@@ -135,7 +136,7 @@ const services = [
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<div class="text-center p-6">
 					<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-						<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 						</svg>
 					</div>
@@ -225,7 +226,7 @@ const services = [
 									<ul class="space-y-3 mb-8">
 										{service.whatYouProvide.map((item) => (
 											<li class="flex items-start">
-												<svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<svg class="w-5 h-5 text-blue-700 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 												</svg>
 												<span class="text-gray-700">{item}</span>
@@ -273,7 +274,7 @@ const services = [
 									<ul class="space-y-3 mb-8">
 										{service.features.map((item) => (
 											<li class="flex items-start">
-												<svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<svg class="w-5 h-5 text-blue-700 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
 												</svg>
 												<span class="text-gray-700">{item}</span>
@@ -306,7 +307,7 @@ const services = [
 										{service.price && (
 											<div class="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/30">
 												<h4 class="font-semibold text-gray-900 mb-2">Phí dịch vụ</h4>
-												<p class="text-2xl font-bold text-blue-600">{service.price}</p>
+												<p class="text-2xl font-bold text-blue-700">{service.price}</p>
 											</div>
 										)}
 										{service.totalPrice && (
@@ -333,10 +334,10 @@ const services = [
 										Xem chi tiết dịch vụ
 									</a>
 								)}
-								<a href="/lien-he" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-center">
+								<a href={getFullPath("/lien-he")} class="bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-center">
 									Liên hệ tư vấn ngay
 								</a>
-								<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 text-center">
+								<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 text-center">
 									Gọi: {companyInfo.hotline}
 								</a>
 							</div>
@@ -365,7 +366,7 @@ const services = [
 						{ step: '5', title: 'Hoàn thành và bàn giao', desc: 'Bàn giao giấy phép, con dấu và các tài liệu cho doanh nghiệp' },
 					].map((item) => (
 						<div class="flex gap-6 items-start">
-							<div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg">
 								{item.step}
 							</div>
 							<div class="flex-1 bg-white p-6 rounded-lg shadow-md">
@@ -380,7 +381,7 @@ const services = [
 	</section>
 
 	<!-- CTA Section -->
-	<section class="bg-blue-600 text-white py-16">
+	<section class="bg-blue-700 text-white py-16">
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-3xl mx-auto text-center">
 				<h2 class="text-3xl font-bold mb-4">Bạn cần tư vấn thêm?</h2>
@@ -388,10 +389,10 @@ const services = [
 					Liên hệ ngay với chúng tôi để được tư vấn miễn phí và báo giá chi tiết
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="/lien-he" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block">
+					<a href={getFullPath("/lien-he")} class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block">
 						Gửi yêu cầu tư vấn
 					</a>
-					<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200 inline-block">
+					<a href={`tel:${companyInfo.hotline.replace(/[\s+]/g, '')}`} class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors duration-200 inline-block">
 						Hotline: {companyInfo.hotline}
 					</a>
 				</div>

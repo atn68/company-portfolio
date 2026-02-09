@@ -51,14 +51,14 @@ export const colors = {
     },
 
     // Gradient
-    gradient: "from-blue-500 to-blue-600",
-    gradientDark: "from-blue-600 to-blue-800",
+    gradient: "from-blue-500 to-blue-700",
+    gradientDark: "from-blue-700 to-blue-800",
     gradientOverlay: "from-blue-900/85 via-blue-800/80 to-slate-900/85",
   },
 
   // Hover state
-  primaryHover: "hover:bg-blue-600",
-  textPrimaryHover: "hover:text-blue-600",
+  primaryHover: "hover:bg-blue-700",
+  textPrimaryHover: "hover:text-blue-700",
 };
 
 // Navigation Links
